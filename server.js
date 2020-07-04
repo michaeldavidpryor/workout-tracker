@@ -19,9 +19,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", {
   useNewUrlParser: true,
 });
 
-db.Library.create({ name: "workout" })
-  .then((dbLibrary) => {
-    console.log(dbLibrary);
+db.Workout.create({ name: "Workout Sessionz" })
+  .then((dbWorkout) => {
+    console.log(dbWorkout);
   })
   .catch(({ message }) => {
     console.log(message);
