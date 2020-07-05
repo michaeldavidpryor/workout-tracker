@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WorkoutSchema = new Schema({
+const workoutSchema = new Schema({
   title: String,
   body: String,
 });
 
-const Workout = mongoose.model("Workout", WorkoutSchema);
+const Workouts = mongoose.model("Workouts", workoutSchema);
 
-module.exports = Workout;
+module.exports = Workouts;
