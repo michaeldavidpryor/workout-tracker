@@ -3,7 +3,12 @@ const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema({
   title: String,
-  day: Date,
+
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+
   workoutData: {
     type: String,
     name: String,
@@ -13,12 +18,18 @@ const workoutSchema = new Schema({
     sets: Number,
     reps: Number,
   },
+
   workout: [
     {
       type: Schema.Types.ObjectId,
       ref: "workoutData",
     },
   ],
+
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
