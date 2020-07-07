@@ -1,5 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
+const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,14 +13,13 @@ app.set("port", process.env.PORT || 3000);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.use(require("./routes/router"));
 
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
-  useFindAndModify: false,
 });
 
 app.listen(PORT, () => {
