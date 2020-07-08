@@ -1,33 +1,32 @@
 const db = require("../models");
-const { request } = require("express");
+const router = require("express").Router();
 
-module.exports = function (app) {
-  app.get("/api/workouts", function (req, res) {
-    db.Workout.find({}).then(function (dbWorkout) {
-      res.json(dbWorkout);
-    });
+router.get("/api/workouts", function (req, res) {
+  db.Workout.find({}).then(function (dbWorkout) {
+    res.json(dbWorkout);
   });
+});
 
-  app.post("/api/workouts/", ({ body }, res) => {
-    db.Workout.create(request.params)(body).then((dbWorkout) => {
-      res.json(dbWorkout);
-    });
+router.post("/api/workouts/", ({ body }, res) => {
+  db.Workout.create({}).then((dbWorkout) => {
+    res.json(dbWorkout);
   });
+});
 
-  app.put("/api/workouts/:id", function (req, res) {
-    db.Workout.findById(req.params.populate).then(function (dbWorkout) {
-      res.json(dbWorkout);
-    });
+router.put("/api/workouts/:id", function (req, res) {
+  db.Workout.findById(req.params.populate).then(function (dbWorkout) {
+    res.json(dbWorkout);
   });
+});
 
-  app.get("/api/workouts/range", function (req, res) {
-    db.Workout.find({ exercises: req.params.exercises - 7 }).then(function (
-      dbWorkout
-    ) {
-      res.json(dbWorkout);
-    });
+router.get("/api/workouts/range", function (req, res) {
+  db.Workout.find({ exercises: req.params.sort - 7 }).then(function (
+    dbWorkout
+  ) {
+    res.json(dbWorkout);
   });
-};
+});
+module.exports = router;
 
 // # Routes
 // * `GET /api/workouts` sends an array of all workouts.
