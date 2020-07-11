@@ -1,29 +1,37 @@
-const db = require("../models");
+const Workout = require("../models/Workout");
 const router = require("express").Router();
 
 router.get("/api/workouts", function (req, res) {
-  db.Workout.find({}).then(function (dbWorkout) {
-    res.json(dbWorkout);
-  });
-});
-
-router.post("/api/workouts/", ({ body }, res) => {
-  db.Workout.create({}).then((dbWorkout) => {
-    res.json(dbWorkout);
+  Workout.find({}).then(function (workouts) {
+    res.json(workouts);
   });
 });
 
 router.put("/api/workouts/:id", function (req, res) {
-  db.Workout.findById(req.params.populate).then(function (dbWorkout) {
-    res.json(dbWorkout);
+  Workout.findOne({ _id: req.params.id }).then(function (workout) {
+    workout.exercises.push(req.body);
+
+    Workout.findOneAndUpdate(
+      { _id: req.params.id },
+      { exercises: workout.exercises },
+      (err, doc, op) => {
+        if (err) throw new err();
+      }
+    );
+    res.json(workout);
+  });
+});
+
+router.post("/api/workouts", function (req, res) {
+  Workout.create({}, function (err, newWorkout) {
+    if (err) throw new err();
+    res.json(newWorkout);
   });
 });
 
 router.get("/api/workouts/range", function (req, res) {
-  db.Workout.find({ exercises: req.params.sort - 7 }).then(function (
-    dbWorkout
-  ) {
-    res.json(dbWorkout);
+  Workout.find({}).then(function (workouts) {
+    res.json(workouts);
   });
 });
 module.exports = router;
@@ -32,7 +40,7 @@ module.exports = router;
 // * `GET /api/workouts` sends an array of all workouts.
 // * `POST /api/workouts/` adds a new workout and sends it. New workouts have no exercises, and their `day` field is set to the current time.
 // * `PUT /api/workouts/:id` appends the request body to the `exercises` array of the identified workout, then sends the updated workout.
-// * `GET /api/workouts/range` sends an array of the 7 most recent workouts.
+// * `GET /api/workouts/ranZge` sends an array of the 7 most recent workouts.
 // * `GET /exercise/` and `GET /stats/` serve `public/exercise.html` and `public/stats.html`, respectively. (And `public` as a whole is served as the static file directory.)
 
 // # Miscellaneous
