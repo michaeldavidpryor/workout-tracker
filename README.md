@@ -1,4 +1,6 @@
-## Summary
+## Fitness Tracker
+
+### Summary
 
 This app tracks your work out with a graphical interface. 
 
@@ -17,9 +19,10 @@ npm install
 ```
 ----
 
-## Language Learned/Used
+### Language Learned/Used
 
 ![GitHub language count](https://img.shields.io/github/languages/count/michaeldavidpryor/workout-tracker?style=flat-square)![GitHub top language](https://img.shields.io/github/languages/top/michaeldavidpryor/workout-tracker?style=flat-square)
+
 
 
 <details>
