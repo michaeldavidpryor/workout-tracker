@@ -1,14 +1,11 @@
 ## Summary
 
-This app is a basic example of using handlebars with javascript and SQL.
+This app tracks your work out with a graphical interface. 
 
 ## Deployment
 
 ```bash
 npm install
-```
-```bash
-node server.js
 ```
 
 ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FPryor_MD)
