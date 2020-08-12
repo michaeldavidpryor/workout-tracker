@@ -11,7 +11,7 @@ This app tracks your work out with a graphical interface.
 ```bash
 npm install
 ```
-###Contact 
+### Contact 
 
 ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FPryor_MD)
 
