@@ -31,7 +31,7 @@ npm install
   
   #### Email
   
-   <a href="mailto:mdpcaps@gmail.com.com?subject=The%20subject%20of%20the%20mail">Fastest Response</a>
+   <a href="mailto:mdpcaps@gmail.com.com?subject=Repository%20Question%20or%20General%20Inquiry">Fastest Response</a>
   
   #### Social 
   
