@@ -23,7 +23,7 @@ npm install
 
 ![GitHub language count](https://img.shields.io/github/languages/count/michaeldavidpryor/workout-tracker?style=flat-square)![GitHub top language](https://img.shields.io/github/languages/top/michaeldavidpryor/workout-tracker?style=flat-square)
 
-
+----
 
 <details>
   
