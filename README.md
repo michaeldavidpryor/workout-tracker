@@ -17,9 +17,14 @@ npm install
 ```
 ----
 
+## Language Learned/Used
+
+![GitHub language count](https://img.shields.io/github/languages/count/michaeldavidpryor/workout-tracker?style=flat-square)![GitHub top language](https://img.shields.io/github/languages/top/michaeldavidpryor/workout-tracker?style=flat-square)
+
+
 <details>
   
-  <summary>Contact</summary>
+<summary>Contact</summary>
   
   #### Email
   
@@ -31,7 +36,3 @@ npm install
 
 </details>
 
-
-## Language Learned/Used
-
-![GitHub language count](https://img.shields.io/github/languages/count/michaeldavidpryor/workout-tracker?style=flat-square)![GitHub top language](https://img.shields.io/github/languages/top/michaeldavidpryor/workout-tracker?style=flat-square)
