@@ -2,7 +2,7 @@
 
 This app tracks your work out with a graphical interface. 
 
-## Deployment
+### Deployment
 
 ```bash
 npm install
